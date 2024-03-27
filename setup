@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for i in \
+  .zshrc-peco \
+  .tigrc \
+; do
+  if [ ! -s $HOME/$i ]; then
+    ln -sf $PWD/$i $HOME/$i
+  fi
+done
