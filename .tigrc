@@ -1,0 +1,10 @@
+bind main H view-help
+bind generic g move-first-line
+bind generic G move-last-line
+bind main    G move-last-line
+bind generic h scroll-left
+bind generic L view-log
+bind generic l scroll-right
+
+bind main V ?git revert %(commit)
+bind main Y @bash -c "echo -n %(commit) | pbcopy"
