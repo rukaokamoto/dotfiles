@@ -2,6 +2,7 @@
 
 for i in \
   .zshrc-peco \
+  .bashrc_peco \
   .tigrc \
 ; do
   if [ ! -s $HOME/$i ]; then

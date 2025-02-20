@@ -1,0 +1,19 @@
+# ref. http://qiita.com/kp_ohnishi/items/3009e2083831af3a7c5c
+
+peco-select-history() {
+  local tac
+  if command -v tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+  READLINE_LINE=$( \
+    history | \
+    awk '!a[$0]++' | \
+    eval $tac | \
+    awk '{$1=""; print substr($0,2)}' | \
+    peco --query "$READLINE_LINE")
+  READLINE_POINT=${#READLINE_LINE}
+}
+
+bind -x '"\C-r": peco-select-history'
