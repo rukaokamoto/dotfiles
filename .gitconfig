@@ -1,0 +1,12 @@
+[user]
+	email = rurukasan0212@gmail.com
+	name = rukaokamoto
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+[alias]
+	co = commit
+	st = status
+	br = branch
+	ch = checkout

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ `which git` ]; then
+  echo 'Input your name for Git author.'
+  echo -n '> '
+  read NAME
+  git config --global user.name "$NAME"
+  
+  while :; do
+    echo 'Input your Email address for Git author.'
+    echo -n '> '
+    read EMAIL
+    echo 'Input again for confirmation.'
+    echo -n '> '
+    read EMAIL_CONFIRM
+    if [[ $EMAIL = $EMAIL_CONFIRM ]]; then break; fi
+    echo 'Do not match. Input again.'
+  done
+  git config --global user.email "$EMAIL"
+fi
